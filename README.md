@@ -1,1 +1,1 @@
-# haskell-book
+### Exercises from the [Haskell Book](http://haskellbook.com/) 
