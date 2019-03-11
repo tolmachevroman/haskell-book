@@ -40,9 +40,11 @@ tests:
   haskell-book-test:
     main:                Spec.hs
     source-dirs:         test
+    other-modules:       SpecHelper, Chapter6.EqInstancesSpec
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
     - haskell-book
+    - hspec
