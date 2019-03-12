@@ -4,7 +4,8 @@ module Chapter6.EqInstances(
     StringOrInt(..),
     Pair(..),
     Tuple(..),
-    Which(..)
+    Which(..),
+    EitherOr(..)
 ) where
 
 -- 1    
@@ -50,3 +51,10 @@ data Which a = ThisOne a | ThatOne a deriving Show
 instance Eq a => Eq (Which a) where
     (==) (ThisOne a) (ThisOne a') = a == a'
     (==) (ThatOne b) (ThatOne b') = b == b'
+
+-- 7
+data EitherOr a b = Hello a | Goodbye b deriving Show
+
+instance (Eq a, Eq b) => Eq (EitherOr a b) where
+    (==) (Hello a) (Hello a') = a == a'
+    (==) (Goodbye b) (Goodbye b') = b == b'

@@ -18,3 +18,6 @@ spec = describe "Instances exercises" $ do
         it "Which is an instance of Eq and Show" $ do 
             ThisOne 'b' `shouldBe` ThisOne 'b'
             ThatOne "hello" `shouldBe` ThatOne "hello"
+        it "EitherOr is an instance of Eq and Show" $ do 
+            (Hello 'b' :: EitherOr Char Int) `shouldBe` (Hello 'b' :: EitherOr Char Int)
+            (Goodbye "hello" :: EitherOr Int String) `shouldBe` (Goodbye "hello" :: EitherOr Int String)
