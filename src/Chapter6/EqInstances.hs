@@ -3,7 +3,8 @@ module Chapter6.EqInstances(
     TwoIntegers(..),
     StringOrInt(..),
     Pair(..),
-    Tuple(..)
+    Tuple(..),
+    Which(..)
 ) where
 
 -- 1    
@@ -42,3 +43,10 @@ data Tuple a b = Tuple a b deriving Show
 
 instance (Eq a, Eq b) => Eq (Tuple a b) where
     (==) (Tuple a a') (Tuple b b') = a == b && a' == b'
+    
+-- 6
+data Which a = ThisOne a | ThatOne a deriving Show
+
+instance Eq a => Eq (Which a) where
+    (==) (ThisOne a) (ThisOne a') = a == a'
+    (==) (ThatOne b) (ThatOne b') = b == b'
