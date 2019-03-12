@@ -9,3 +9,6 @@ spec = describe "Instances exercises" $ do
         it "StringOrInt is an instance of Eq and Show" $ do 
             TisAnInt 3 `shouldBe` TisAnInt 3
             TisAString "bla" `shouldBe` TisAString "bla"
+        it "Pair is an instance of Eq and Show" $ do 
+            Pair 5 10 `shouldBe` Pair 5 10
+            Pair 'c' 'b' `shouldBe` Pair 'c' 'b'
