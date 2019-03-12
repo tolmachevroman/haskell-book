@@ -12,3 +12,6 @@ spec = describe "Instances exercises" $ do
         it "Pair is an instance of Eq and Show" $ do 
             Pair 5 10 `shouldBe` Pair 5 10
             Pair 'c' 'b' `shouldBe` Pair 'c' 'b'
+        it "Tuple is an instance of Eq and Show" $ do 
+            Tuple 5 'b' `shouldBe` Tuple 5 'b'
+            Tuple "hello" True `shouldBe` Tuple "hello" True
