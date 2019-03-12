@@ -1,6 +1,7 @@
 module Chapter6.EqInstances(
     TisAnInteger(..),
-    TwoIntegers(..)
+    TwoIntegers(..),
+    StringOrInt(..)
 ) where
 
 -- 1    
@@ -20,3 +21,10 @@ instance Show TwoIntegers where
 
 instance Eq TwoIntegers where
     (==) (Two a a') (Two b b') = a == b && a' == b'    
+
+-- 3
+data StringOrInt = TisAnInt Int | TisAString String deriving Show
+
+instance Eq StringOrInt where
+    (==) (TisAnInt a) (TisAnInt a') = a == a' 
+    (==) (TisAString b) (TisAString b') = b == b' 
