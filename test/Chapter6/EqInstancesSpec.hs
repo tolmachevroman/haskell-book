@@ -24,3 +24,7 @@ spec = describe "Instances exercises" $ do
         it "DayOfWeekFridayTheBest is an instance of Ord" $ do
             compare Fri Mon `shouldBe` GT
             compare Fri Fri `shouldBe` EQ
+        it "Papu is an instance of Eq, Ord and Show" $ do
+            Papu (Rocks "ko") (Yeah True) `shouldBe` Papu (Rocks "ko") (Yeah True)
+            compare (Papu (Rocks "ko") (Yeah True)) (Papu (Rocks "ko") (Yeah False)) `shouldBe` GT
+

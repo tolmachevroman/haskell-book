@@ -6,7 +6,10 @@ module Chapter6.EqInstances(
     Tuple(..),
     Which(..),
     EitherOr(..),
-    DayOfWeekFridayTheBest(..)
+    DayOfWeekFridayTheBest(..),
+    Rocks(..),
+    Yeah(..),
+    Papu(..)
 ) where
 
 -- 1
@@ -68,3 +71,8 @@ instance Ord DayOfWeekFridayTheBest where
     compare Fri _   = GT
     compare _ Fri   = LT
     compare _ _     = EQ
+
+-- 9
+data Rocks = Rocks String deriving (Eq, Show, Ord)
+data Yeah = Yeah Bool deriving (Eq, Ord, Show)
+data Papu = Papu Rocks Yeah deriving (Eq, Ord, Show)
