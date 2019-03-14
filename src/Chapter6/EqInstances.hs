@@ -9,7 +9,8 @@ module Chapter6.EqInstances(
     DayOfWeekFridayTheBest(..),
     Rocks(..),
     Yeah(..),
-    Papu(..)
+    Papu(..),
+    chk, arith
 ) where
 
 -- 1
@@ -76,3 +77,10 @@ instance Ord DayOfWeekFridayTheBest where
 data Rocks = Rocks String deriving (Eq, Show, Ord)
 data Yeah = Yeah Bool deriving (Eq, Ord, Show)
 data Papu = Papu Rocks Yeah deriving (Eq, Ord, Show)
+
+-- 10
+chk :: Eq b => (a -> b) -> a -> b -> Bool
+chk f a b = f a == b
+
+arith :: Num b => (a -> b) -> Integer -> a -> b
+arith f i a = f a
