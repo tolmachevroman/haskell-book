@@ -1,7 +1,8 @@
 module Chapter8.Recursion(
     fibonacci,
     dividedBy,
-    recSum
+    recSum,
+    recMult
 ) where
 
 -- 1
@@ -24,3 +25,8 @@ dividedBy n d
 recSum :: (Eq a, Num a) => a -> a
 recSum 1 = 1
 recSum n = n + recSum (n - 1)    
+
+-- 4
+recMult :: Integral a => a -> a -> a
+recMult n 0 = 0
+recMult n m = n + recMult n (m - 1)

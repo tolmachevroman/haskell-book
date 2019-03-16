@@ -17,3 +17,8 @@ spec = describe "Recursion exercises" $ do
             recSum 5 `shouldBe` 15
             recSum 6 `shouldBe` 21
             recSum 2 `shouldBe` 3
+        it "recursive multiplication" $ do
+            recMult 5 3 `shouldBe` 15
+            recMult 3 5 `shouldBe` 15
+            recMult 2 0 `shouldBe` 0
+            recMult 0 3 `shouldBe` 0
