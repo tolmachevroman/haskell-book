@@ -1,7 +1,10 @@
 module Chapter7.PatternMatching(
     functionC,
     ifEvenAdd2,
-    num
+    num,
+    foldBool,
+    foldBool2,
+    g
 ) where
 
 -- 1
@@ -22,3 +25,19 @@ num n =
         LT -> -1
         GT -> 1
         EQ -> 0
+-- 4
+foldBool :: a -> a -> Bool -> a
+foldBool x y c =
+    case c of
+        True  -> x
+        False -> y
+
+-- 4
+foldBool2 :: a -> a -> Bool -> a
+foldBool2 x y c
+    | c = x
+    | otherwise = y
+
+-- 5
+g :: (a -> b) -> (a, c) -> (b, c)
+g f (a, c) = (f a, c)
