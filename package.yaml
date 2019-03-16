@@ -40,7 +40,8 @@ tests:
   haskell-book-test:
     main:                Spec.hs
     source-dirs:         test
-    other-modules:       SpecHelper, Chapter6.EqInstancesSpec, Chapter7.PatternMatchingSpec
+    other-modules:       SpecHelper, Chapter6.EqInstancesSpec, Chapter7.PatternMatchingSpec,
+                         Chapter8.RecursionSpec 
     ghc-options:
     - -threaded
     - -rtsopts
