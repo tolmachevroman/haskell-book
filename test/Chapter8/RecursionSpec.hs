@@ -13,6 +13,9 @@ spec = describe "Recursion exercises" $ do
             dividedBy 10 5 `shouldBe` 2
             dividedBy 5 10 `shouldBe` 0
             dividedBy 13 4 `shouldBe` 3
+            dividedBy 10 (-2) `shouldBe` (-5)
+            dividedBy (-10) (-2) `shouldBe` 5
+            dividedBy (-10) 2 `shouldBe` (-5)
         it "recursive sum from 1 to n" $ do
             recSum 5 `shouldBe` 15
             recSum 6 `shouldBe` 21
