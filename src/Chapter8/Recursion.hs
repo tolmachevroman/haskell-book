@@ -3,8 +3,11 @@ module Chapter8.Recursion(
     dividedBy,
     recSum,
     recMult,
-    mcCarthy91
+    mcCarthy91,
+    wordNumber
 ) where
+
+import           Data.List (intercalate)
 
 -- 1
 fibonacci :: Integral a => a -> a
@@ -38,3 +41,27 @@ recMult n m = n + recMult n (m - 1)
 mcCarthy91 n
     | n  > 100 = n - 10
     | otherwise = 91
+
+-- 6
+digitToWord :: Int -> String
+digitToWord n =
+    case n of
+        0 -> "zero"
+        1 -> "one"
+        2 -> "two"
+        3 -> "three"
+        4 -> "four"
+        5 -> "five"
+        6 -> "six"
+        7 -> "seven"
+        8 -> "eight"
+        9 -> "nine"
+        _ -> ""
+
+digits :: Int -> [Int]
+digits n
+    | n < 10 = [n]
+    | otherwise = digits (div n 10) ++ [mod n 10]
+
+wordNumber :: Int -> String
+wordNumber n = intercalate "-" (map digitToWord (digits n))  

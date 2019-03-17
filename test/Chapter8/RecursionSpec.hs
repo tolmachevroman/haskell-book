@@ -28,3 +28,6 @@ spec = describe "Recursion exercises" $ do
         it "McCarthy91 function" $ do
             map mcCarthy91 [98..101] `shouldBe` [91, 91, 91, 91]
             map mcCarthy91 [95..110] `shouldBe` [91,91,91,91,91,91,91,92,93,94,95,96,97,98,99,100]
+        it "wordNumber function" $ do
+            wordNumber 1234 `shouldBe` "one-two-three-four"
+            wordNumber 453 `shouldBe` "four-five-three"
