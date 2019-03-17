@@ -25,3 +25,6 @@ spec = describe "Recursion exercises" $ do
             recMult 3 5 `shouldBe` 15
             recMult 2 0 `shouldBe` 0
             recMult 0 3 `shouldBe` 0
+        it "McCarthy91 function" $ do
+            map mcCarthy91 [98..101] `shouldBe` [91, 91, 91, 91]
+            map mcCarthy91 [95..110] `shouldBe` [91,91,91,91,91,91,91,92,93,94,95,96,97,98,99,100]

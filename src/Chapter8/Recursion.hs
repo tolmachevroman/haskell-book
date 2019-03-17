@@ -2,7 +2,8 @@ module Chapter8.Recursion(
     fibonacci,
     dividedBy,
     recSum,
-    recMult
+    recMult,
+    mcCarthy91
 ) where
 
 -- 1
@@ -32,3 +33,8 @@ recSum n = n + recSum (n - 1)
 recMult :: Integral a => a -> a -> a
 recMult n 0 = 0
 recMult n m = n + recMult n (m - 1)
+
+-- 5
+mcCarthy91 n
+    | n  > 100 = n - 10
+    | otherwise = 91
