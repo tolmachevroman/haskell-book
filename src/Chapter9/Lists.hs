@@ -1,6 +1,13 @@
 module Chapter9.Lists(
-    acro
+    acronym,
+    tuplesFromLists
 ) where
 
 -- 1
-acro xs = [x | x <- xs, x `elem` ['A'..'Z'] ]
+acronym xs = [x | x <- xs, x `elem` ['A'..'Z'] ]
+
+-- 2
+mySquare = [x^2 | x <- [1..5]]
+myCube   = [y^3 | y <- [1..5]]
+
+tuplesFromLists = [(x, y) | x <- mySquare, y <- myCube]
