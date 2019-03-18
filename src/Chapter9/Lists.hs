@@ -1,7 +1,8 @@
 module Chapter9.Lists(
     acronym,
     tuplesFromLists,
-    multipliesOf3
+    multipliesOf3,
+    articlesFilter
 ) where
 
 -- 1
@@ -15,3 +16,6 @@ tuplesFromLists = [(x, y) | x <- mySquare, y <- myCube]
 
 -- 3
 multipliesOf3 xs = [x | x <- xs, x `rem` 3 == 0]
+
+-- 4
+articlesFilter sentence = [word | word <- words sentence, word `notElem` ["the", "a", "an"]]
