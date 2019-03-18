@@ -10,3 +10,5 @@ spec = describe "lists exercises" $ do
         it "tuples from lists" $ do
             tuplesFromLists !! 0 `shouldBe` (1, 1)
             tuplesFromLists !! 1 `shouldBe` (1, 8)
+        it "multiplies of 3" $ do
+            multipliesOf3 [0..10] `shouldBe` [0, 3, 6, 9]
