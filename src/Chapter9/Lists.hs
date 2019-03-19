@@ -8,7 +8,8 @@ module Chapter9.Lists(
     filterUpperCases,
     capitalizeString,
     capitalizeWholeString,
-    justFirstLetterCapitalized
+    justFirstLetterCapitalized,
+    myOr
 ) where
 
 import           Data.Char
@@ -55,3 +56,8 @@ capitalizeWholeString (x:xs) = toUpper x : capitalizeWholeString xs
 justFirstLetterCapitalized :: String -> String
 justFirstLetterCapitalized [] = []
 justFirstLetterCapitalized xs = [toUpper . head $ xs]
+
+-- 11
+myOr :: [Bool] -> Bool
+myOr [] = False
+myOr (x:xs) = x || myOr xs

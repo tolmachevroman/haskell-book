@@ -28,3 +28,7 @@ spec = describe "lists exercises" $ do
             capitalizeString "julie" `shouldBe` "Julie"
             capitalizeWholeString "julie" `shouldBe` "JULIE"
             justFirstLetterCapitalized "julie" `shouldBe` "J"
+        it "standard functions re-implementation" $ do
+            myOr [True, False, True] `shouldBe` True
+            myOr [False, False, False] `shouldBe` False
+            myOr [True, True] `shouldBe` True
