@@ -10,7 +10,8 @@ module Chapter9.Lists(
     capitalizeWholeString,
     justFirstLetterCapitalized,
     myOr,
-    myAny
+    myAny,
+    myElem
 ) where
 
 import           Data.Char
@@ -67,3 +68,8 @@ myOr (x:xs) = x || myOr xs
 myAny :: (a -> Bool) -> [a] -> Bool
 myAny f [] = False
 myAny f (x:xs) = f x || myAny f xs
+
+-- 13
+myElem :: Eq a => a -> [a] -> Bool
+myElem a [] = False
+myElem a (x:xs) = a == x || myElem a xs
