@@ -7,7 +7,8 @@ module Chapter9.Lists(
     zipWith',
     filterUpperCases,
     capitalizeString,
-    capitalizeWholeString
+    capitalizeWholeString,
+    justFirstLetterCapitalized
 ) where
 
 import           Data.Char
@@ -49,3 +50,8 @@ capitalizeString (x:xs) = toUpper x : xs
 -- 9
 capitalizeWholeString [] = []
 capitalizeWholeString (x:xs) = toUpper x : capitalizeWholeString xs
+
+-- 10
+justFirstLetterCapitalized :: String -> String
+justFirstLetterCapitalized [] = []
+justFirstLetterCapitalized xs = [toUpper . head $ xs]

@@ -27,3 +27,4 @@ spec = describe "lists exercises" $ do
         it "capitalizing first letter and whole word" $ do
             capitalizeString "julie" `shouldBe` "Julie"
             capitalizeWholeString "julie" `shouldBe` "JULIE"
+            justFirstLetterCapitalized "julie" `shouldBe` "J"
