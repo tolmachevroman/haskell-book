@@ -6,7 +6,8 @@ module Chapter9.Lists(
     zip',
     zipWith',
     filterUpperCases,
-    capitalizeString
+    capitalizeString,
+    capitalizeWholeString
 ) where
 
 import           Data.Char
@@ -44,3 +45,7 @@ filterUpperCases = filter isUpper
 -- 8
 capitalizeString [] = []
 capitalizeString (x:xs) = toUpper x : xs
+
+-- 9
+capitalizeWholeString [] = []
+capitalizeWholeString (x:xs) = toUpper x : capitalizeWholeString xs

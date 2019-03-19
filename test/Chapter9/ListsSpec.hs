@@ -24,5 +24,6 @@ spec = describe "lists exercises" $ do
         it "filter upper cases" $ do
             filterUpperCases "Hello World" `shouldBe` "HW"
             filterUpperCases "HbEfLrLxO" `shouldBe` "HELLO"
-        it "capitalize string" $ do
+        it "capitalizing first letter and whole word" $ do
             capitalizeString "julie" `shouldBe` "Julie"
+            capitalizeWholeString "julie" `shouldBe` "JULIE"
