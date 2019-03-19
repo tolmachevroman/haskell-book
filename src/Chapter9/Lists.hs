@@ -12,7 +12,10 @@ module Chapter9.Lists(
     myOr,
     myAny,
     myElem,
-    myReverse
+    myReverse,
+    squish,
+    squishMap,
+    squishAgain
 ) where
 
 import           Data.Char
@@ -79,3 +82,15 @@ myElem a (x:xs) = a == x || myElem a xs
 myReverse :: [a] -> [a]
 myReverse [] = []
 myReverse (x:xs) = myReverse xs ++ [x]
+
+-- 15
+squish :: [[a]] -> [a]
+squish [xs] = xs
+
+-- 16
+squishMap :: (a -> [b]) -> [a] -> [b]
+squishMap f xs = squish $ map f xs
+
+-- 17
+squishAgain :: [[a]] -> [a]
+squishAgain = squishMap id

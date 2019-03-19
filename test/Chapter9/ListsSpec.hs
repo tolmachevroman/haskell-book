@@ -38,3 +38,6 @@ spec = describe "lists exercises" $ do
             myElem 'a' "Hello" `shouldBe` False
             myReverse "Hello" `shouldBe` "olleH"
             myReverse [1..5] `shouldBe` [5, 4, 3, 2, 1]
+            squish ["Hello"] `shouldBe` "Hello"
+            squishMap (\x -> [1, x, 3]) [2] `shouldBe` [1, 2, 3]
+            squishAgain [[1..5]] `shouldBe` [1, 2, 3, 4, 5]
