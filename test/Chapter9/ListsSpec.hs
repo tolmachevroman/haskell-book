@@ -1,6 +1,6 @@
 module Chapter9.ListsSpec where
 
-import SpecHelper
+import           SpecHelper
 
 spec :: Spec
 spec = describe "lists exercises" $ do
@@ -22,5 +22,7 @@ spec = describe "lists exercises" $ do
             zipWith' (+) [1..3] [1..5] `shouldBe` [2, 4, 6]
             zipWith' (>) "hello" "non" `shouldBe` [False, False, False]
         it "filter upper cases" $ do
-            filterUpperCases "Hello World" `shouldBe` "HW"   
-            filterUpperCases "HbEfLrLxO" `shouldBe` "HELLO"   
+            filterUpperCases "Hello World" `shouldBe` "HW"
+            filterUpperCases "HbEfLrLxO" `shouldBe` "HELLO"
+        it "capitalize string" $ do
+            capitalizeString "julie" `shouldBe` "Julie"

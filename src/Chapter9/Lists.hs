@@ -5,7 +5,8 @@ module Chapter9.Lists(
     articlesFilter,
     zip',
     zipWith',
-    filterUpperCases
+    filterUpperCases,
+    capitalizeString
 ) where
 
 import           Data.Char
@@ -39,3 +40,7 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 
 -- 7
 filterUpperCases = filter isUpper
+
+-- 8
+capitalizeString [] = []
+capitalizeString (x:xs) = toUpper x : xs
