@@ -18,3 +18,6 @@ spec = describe "lists exercises" $ do
         it "my zip function" $ do
             zip' [1..3] [1..5] `shouldBe` [(1, 1), (2, 2), (3, 3)]
             zip' ['a'..'d'] [1..5] `shouldBe` [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+        it "my zipWith function" $ do
+            zipWith' (+) [1..3] [1..5] `shouldBe` [2, 4, 6]
+            zipWith' (>) "hello" "non" `shouldBe` [False, False, False]

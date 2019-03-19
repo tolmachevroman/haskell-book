@@ -3,7 +3,8 @@ module Chapter9.Lists(
     tuplesFromLists,
     multipliesOf3,
     articlesFilter,
-    zip'
+    zip',
+    zipWith'
 ) where
 
 -- 1
@@ -26,3 +27,9 @@ zip' :: [a] -> [b] -> [(a, b)]
 zip' _ []          = []
 zip' [] _          = []
 zip' (x:xs) (y:ys) = (x, y) : zip' xs ys
+
+-- 6
+zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWith' f _ []          = []
+zipWith' f [] _          = []
+zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
