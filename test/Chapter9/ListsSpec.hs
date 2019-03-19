@@ -36,3 +36,5 @@ spec = describe "lists exercises" $ do
             myAny even [1, 3] `shouldBe` False
             myElem 1 [1, 3] `shouldBe` True
             myElem 'a' "Hello" `shouldBe` False
+            myReverse "Hello" `shouldBe` "olleH"
+            myReverse [1..5] `shouldBe` [5, 4, 3, 2, 1]

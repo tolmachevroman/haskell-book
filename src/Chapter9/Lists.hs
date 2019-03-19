@@ -11,7 +11,8 @@ module Chapter9.Lists(
     justFirstLetterCapitalized,
     myOr,
     myAny,
-    myElem
+    myElem,
+    myReverse
 ) where
 
 import           Data.Char
@@ -73,3 +74,8 @@ myAny f (x:xs) = f x || myAny f xs
 myElem :: Eq a => a -> [a] -> Bool
 myElem a [] = False
 myElem a (x:xs) = a == x || myElem a xs
+
+-- 14
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x:xs) = myReverse xs ++ [x]
