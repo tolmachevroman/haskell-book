@@ -21,3 +21,6 @@ spec = describe "lists exercises" $ do
         it "my zipWith function" $ do
             zipWith' (+) [1..3] [1..5] `shouldBe` [2, 4, 6]
             zipWith' (>) "hello" "non" `shouldBe` [False, False, False]
+        it "filter upper cases" $ do
+            filterUpperCases "Hello World" `shouldBe` "HW"   
+            filterUpperCases "HbEfLrLxO" `shouldBe` "HELLO"   

@@ -4,8 +4,11 @@ module Chapter9.Lists(
     multipliesOf3,
     articlesFilter,
     zip',
-    zipWith'
+    zipWith',
+    filterUpperCases
 ) where
+
+import           Data.Char
 
 -- 1
 acronym xs = [x | x <- xs, x `elem` ['A'..'Z'] ]
@@ -33,3 +36,6 @@ zipWith' :: (a -> b -> c) -> [a] -> [b] -> [c]
 zipWith' f _ []          = []
 zipWith' f [] _          = []
 zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
+
+-- 7
+filterUpperCases = filter isUpper
