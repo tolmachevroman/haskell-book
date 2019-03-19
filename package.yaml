@@ -41,7 +41,7 @@ tests:
     main:                Spec.hs
     source-dirs:         test
     other-modules:       SpecHelper, Chapter6.EqInstancesSpec, Chapter7.PatternMatchingSpec,
-                         Chapter8.RecursionSpec, Chapter9.ListsSpec 
+                         Chapter8.RecursionSpec, Chapter9.ListsSpec, Chapter9.CiphersSpec 
     ghc-options:
     - -threaded
     - -rtsopts
