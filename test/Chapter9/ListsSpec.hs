@@ -32,3 +32,5 @@ spec = describe "lists exercises" $ do
             myOr [True, False, True] `shouldBe` True
             myOr [False, False, False] `shouldBe` False
             myOr [True, True] `shouldBe` True
+            myAny even [1, 2, 3] `shouldBe` True
+            myAny even [1, 3] `shouldBe` False

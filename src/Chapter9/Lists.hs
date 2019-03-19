@@ -9,7 +9,8 @@ module Chapter9.Lists(
     capitalizeString,
     capitalizeWholeString,
     justFirstLetterCapitalized,
-    myOr
+    myOr,
+    myAny
 ) where
 
 import           Data.Char
@@ -61,3 +62,8 @@ justFirstLetterCapitalized xs = [toUpper . head $ xs]
 myOr :: [Bool] -> Bool
 myOr [] = False
 myOr (x:xs) = x || myOr xs
+
+-- 12
+myAny :: (a -> Bool) -> [a] -> Bool
+myAny f [] = False
+myAny f (x:xs) = f x || myAny f xs
