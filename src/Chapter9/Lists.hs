@@ -2,7 +2,8 @@ module Chapter9.Lists(
     acronym,
     tuplesFromLists,
     multipliesOf3,
-    articlesFilter
+    articlesFilter,
+    zip'
 ) where
 
 -- 1
@@ -19,3 +20,9 @@ multipliesOf3 xs = [x | x <- xs, x `rem` 3 == 0]
 
 -- 4
 articlesFilter sentence = [word | word <- words sentence, word `notElem` ["the", "a", "an"]]
+
+-- 5
+zip' :: [a] -> [b] -> [(a, b)]
+zip' _ []          = []
+zip' [] _          = []
+zip' (x:xs) (y:ys) = (x, y) : zip' xs ys
