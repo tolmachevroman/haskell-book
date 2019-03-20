@@ -15,7 +15,8 @@ module Chapter9.Lists(
     myReverse,
     squish,
     squishMap,
-    squishAgain
+    squishAgain,
+    myMaximumBy
 ) where
 
 import           Data.Char
@@ -51,11 +52,11 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 filterUpperCases = filter isUpper
 
 -- 8
-capitalizeString [] = []
+capitalizeString []     = []
 capitalizeString (x:xs) = toUpper x : xs
 
 -- 9
-capitalizeWholeString [] = []
+capitalizeWholeString []     = []
 capitalizeWholeString (x:xs) = toUpper x : capitalizeWholeString xs
 
 -- 10
@@ -65,22 +66,22 @@ justFirstLetterCapitalized xs = [toUpper . head $ xs]
 
 -- 11
 myOr :: [Bool] -> Bool
-myOr [] = False
+myOr []     = False
 myOr (x:xs) = x || myOr xs
 
 -- 12
 myAny :: (a -> Bool) -> [a] -> Bool
-myAny f [] = False
+myAny f []     = False
 myAny f (x:xs) = f x || myAny f xs
 
 -- 13
 myElem :: Eq a => a -> [a] -> Bool
-myElem a [] = False
+myElem a []     = False
 myElem a (x:xs) = a == x || myElem a xs
 
 -- 14
 myReverse :: [a] -> [a]
-myReverse [] = []
+myReverse []     = []
 myReverse (x:xs) = myReverse xs ++ [x]
 
 -- 15
@@ -94,3 +95,9 @@ squishMap f xs = squish $ map f xs
 -- 17
 squishAgain :: [[a]] -> [a]
 squishAgain = squishMap id
+
+-- 18
+myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
+myMaximumBy f [x] = x
+myMaximumBy f (x:xs) = compare' f x (myMaximumBy f xs) where
+    compare' f x1 x2 = if f x1 x2 == LT then x2 else x1

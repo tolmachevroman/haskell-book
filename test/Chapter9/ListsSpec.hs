@@ -41,3 +41,5 @@ spec = describe "lists exercises" $ do
             squish ["Hello"] `shouldBe` "Hello"
             squishMap (\x -> [1, x, 3]) [2] `shouldBe` [1, 2, 3]
             squishAgain [[1..5]] `shouldBe` [1, 2, 3, 4, 5]
+            myMaximumBy compare [1, 300, 800, 400] `shouldBe` 800
+            myMaximumBy compare [1, 53, 9001, 10] `shouldBe` 9001
