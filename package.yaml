@@ -21,6 +21,7 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- time
 
 library:
   source-dirs: src
@@ -41,7 +42,8 @@ tests:
     main:                Spec.hs
     source-dirs:         test
     other-modules:       SpecHelper, Chapter6.EqInstancesSpec, Chapter7.PatternMatchingSpec,
-                         Chapter8.RecursionSpec, Chapter9.ListsSpec, Chapter9.CiphersSpec 
+                         Chapter8.RecursionSpec, Chapter9.ListsSpec, Chapter9.CiphersSpec,
+                         Chapter9.DatabaseSpec 
     ghc-options:
     - -threaded
     - -rtsopts
