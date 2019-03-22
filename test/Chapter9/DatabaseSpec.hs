@@ -12,3 +12,6 @@ spec = describe "Database with folds exercises" $ do
                 ]
         it "filters numbers" $ do
 	    filterDbNumber theDatabase `shouldBe` [9001]
+        it "finds most recent date" $ do
+            mostRecent theDatabase `shouldBe` UTCTime (fromGregorian 1921 7 8) (secondsToDiffTime 34211)
+	    mostRecent [] `shouldBe` UTCTime (fromGregorian 0 0 0) (secondsToDiffTime 0)
