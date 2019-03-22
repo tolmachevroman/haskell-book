@@ -2,7 +2,8 @@ module Chapter9.Database(
     theDatabase,
     filterDbDate,
     filterDbNumber,
-    mostRecent
+    mostRecent,
+    sumDb
 ) where
 
 import           Data.Time (UTCTime (..), fromGregorian, secondsToDiffTime)
@@ -13,6 +14,7 @@ theDatabase :: [DatabaseItem]
 theDatabase = [
     DbDate(UTCTime (fromGregorian 1911 5 1) (secondsToDiffTime 34211)),
     DbNumber 9001,
+    DbNumber 999,
     DbString "Hello World",
     DbDate (UTCTime (fromGregorian 1921 7 8) (secondsToDiffTime 34211))
     ]
@@ -35,3 +37,9 @@ mostRecent = foldr (\d t -> findMaxTime d t) defaultTime where
   defaultTime = UTCTime (fromGregorian 0 0 0) (secondsToDiffTime 0)
   findMaxTime (DbDate d) t = max d t
   findMaxTime _          t = t
+
+-- 4
+sumDb :: [DatabaseItem] -> Integer
+sumDb = foldr (\i a -> filter' i + a) 0 where
+  filter' (DbNumber t) = t
+  filter' _            = 0
