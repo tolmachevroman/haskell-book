@@ -17,3 +17,5 @@ spec = describe "Database with folds exercises" $ do
             mostRecent [] `shouldBe` UTCTime (fromGregorian 0 0 0) (secondsToDiffTime 0)
         it "sums numbers" $ do
             sumDb theDatabase `shouldBe` 10000
+        it "finds average of numbers" $ do
+            averageDb theDatabase `shouldBe` 5000

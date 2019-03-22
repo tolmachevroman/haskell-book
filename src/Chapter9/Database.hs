@@ -3,7 +3,8 @@ module Chapter9.Database(
     filterDbDate,
     filterDbNumber,
     mostRecent,
-    sumDb
+    sumDb,
+    averageDb
 ) where
 
 import           Data.Time (UTCTime (..), fromGregorian, secondsToDiffTime)
@@ -43,3 +44,9 @@ sumDb :: [DatabaseItem] -> Integer
 sumDb = foldr (\i a -> filter' i + a) 0 where
   filter' (DbNumber t) = t
   filter' _            = 0
+
+-- 5
+averageDb :: [DatabaseItem] -> Double
+averageDb db = (fromIntegral sumDbNumbers) / (fromIntegral $ length filteredNumbers) where
+  sumDbNumbers = foldr (\i a -> i + a) 0 filteredNumbers 
+  filteredNumbers = filterDbNumber db
