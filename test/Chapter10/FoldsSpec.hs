@@ -8,3 +8,4 @@ spec = describe "Folds exercises" $ do
             funcA !! 0 `shouldBe` ('p', 'a', 'p')
             funcA !! 1 `shouldBe` ('p', 'a', 'b')
             funcB !! 10 `shouldBe` ('p', 'e', 'k')
+            funcC !! 0 `shouldBe` ("table", "to sit", "table")
