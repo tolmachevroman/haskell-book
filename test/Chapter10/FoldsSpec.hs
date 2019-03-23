@@ -9,3 +9,5 @@ spec = describe "Folds exercises" $ do
             funcA !! 1 `shouldBe` ('p', 'a', 'b')
             funcB !! 10 `shouldBe` ('p', 'e', 'k')
             funcC !! 0 `shouldBe` ("table", "to sit", "table")
+        it "standard functions using folds" $ do
+            myOrWithFolds [False, True] `shouldBe` True

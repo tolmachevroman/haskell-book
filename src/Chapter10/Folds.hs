@@ -1,7 +1,8 @@
 module Chapter10.Folds(
     funcA,
     funcB,
-    funcC
+    funcC,
+    myOrWithFolds
 ) where
 
 -- 1
@@ -18,3 +19,7 @@ words' = ["table", "ball", "chair"]
 verbs = ["to sit", "to kick", "to wash"]
 
 funcC = [(a, b, c) | a <- words', b <- verbs, c <- words']
+
+-- 4
+myOrWithFolds :: [Bool] -> Bool
+myOrWithFolds = foldr (||) False
