@@ -13,3 +13,5 @@ spec = describe "Folds exercises" $ do
             myOrWithFolds [False, True] `shouldBe` True
             myAnyWithFolds (< 0) [1..5] `shouldBe` False
             myAnyWithFolds even [1..5] `shouldBe` True
+            myElemWithFolds 1 [1..5] `shouldBe` True
+            myElemWithFolds 'a' "Hello" `shouldBe` False

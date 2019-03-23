@@ -3,7 +3,8 @@ module Chapter10.Folds(
     funcB,
     funcC,
     myOrWithFolds,
-    myAnyWithFolds
+    myAnyWithFolds,
+    myElemWithFolds 
 ) where
 
 -- 1
@@ -27,4 +28,8 @@ myOrWithFolds = foldr (||) False
 
 -- 5
 myAnyWithFolds :: (a -> Bool) -> [a] -> Bool
-myAnyWithFolds f = foldr (\i a -> f i || a) False  
+myAnyWithFolds f = foldr (\i a -> f i || a) False
+
+-- 6
+myElemWithFolds :: Eq a => a -> [a] -> Bool
+myElemWithFolds x = foldr (\i a -> i == x || a) False  
