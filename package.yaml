@@ -43,7 +43,7 @@ tests:
     source-dirs:         test
     other-modules:       SpecHelper, Chapter6.EqInstancesSpec, Chapter7.PatternMatchingSpec,
                          Chapter8.RecursionSpec, Chapter9.ListsSpec, Chapter9.CiphersSpec,
-                         Chapter9.DatabaseSpec, Chapter10.FoldsSpec, Chapter11.VehiclesSpec 
+                         Chapter9.DatabaseSpec, Chapter10.FoldsSpec, Chapter11.VehiclesSpec, Chapter11.PersonSpec 
     ghc-options:
     - -threaded
     - -rtsopts
