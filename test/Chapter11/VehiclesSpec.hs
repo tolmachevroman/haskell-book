@@ -21,3 +21,5 @@ spec =
       isPlane avianca `shouldBe` True
       areCars mazdaAndMini `shouldBe` [True, True]
       areCars (avianca : mazdaAndMini) `shouldBe` [False, True, True]
+      getManufacturer mazda `shouldBe` Just Mazda
+      getManufacturer avianca `shouldBe` Nothing

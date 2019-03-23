@@ -6,6 +6,7 @@ module Chapter11.Vehicles
   , isCar
   , isPlane
   , areCars
+  , getManufacturer
   ) where
 
 --
@@ -44,3 +45,8 @@ isPlane _ = False
 --
 areCars :: [Vehicle] -> [Bool]
 areCars = map isCar
+
+--
+getManufacturer :: Vehicle -> Maybe Manufacturer
+getManufacturer (Car m _) = Just m
+getManufacturer _ = Nothing
