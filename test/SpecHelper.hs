@@ -6,7 +6,8 @@ module SpecHelper
   module Chapter8.Recursion,
   module Chapter9.Lists,
   module Chapter9.Ciphers,
-  module Chapter9.Database
+  module Chapter9.Database,
+  module Chapter10.Folds
 ) where
 
 import           Chapter6.EqInstances
@@ -15,4 +16,5 @@ import           Chapter8.Recursion
 import           Chapter9.Lists
 import           Chapter9.Ciphers
 import           Chapter9.Database
+import           Chapter10.Folds
 import           Test.Hspec
