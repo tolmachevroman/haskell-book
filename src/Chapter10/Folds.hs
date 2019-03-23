@@ -2,7 +2,8 @@ module Chapter10.Folds(
     funcA,
     funcB,
     funcC,
-    myOrWithFolds
+    myOrWithFolds,
+    myAnyWithFolds
 ) where
 
 -- 1
@@ -23,3 +24,7 @@ funcC = [(a, b, c) | a <- words', b <- verbs, c <- words']
 -- 4
 myOrWithFolds :: [Bool] -> Bool
 myOrWithFolds = foldr (||) False
+
+-- 5
+myAnyWithFolds :: (a -> Bool) -> [a] -> Bool
+myAnyWithFolds f = foldr (\i a -> f i || a) False  

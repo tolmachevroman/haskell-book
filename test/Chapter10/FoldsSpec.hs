@@ -11,3 +11,5 @@ spec = describe "Folds exercises" $ do
             funcC !! 0 `shouldBe` ("table", "to sit", "table")
         it "standard functions using folds" $ do
             myOrWithFolds [False, True] `shouldBe` True
+            myAnyWithFolds (< 0) [1..5] `shouldBe` False
+            myAnyWithFolds even [1..5] `shouldBe` True
