@@ -5,7 +5,8 @@ module Chapter10.Folds(
     myOrWithFolds,
     myAnyWithFolds,
     myElemWithFolds,
-    myReverseWithFolds 
+    myReverseWithFolds,
+    myMapWithFolds 
 ) where
 
 -- 1
@@ -37,4 +38,8 @@ myElemWithFolds x = foldr (\i a -> i == x || a) False
 
 -- 7
 myReverseWithFolds :: [a] -> [a]
-myReverseWithFolds = foldr (\i a -> a ++ [i]) [] 
+myReverseWithFolds = foldr (\i a -> a ++ [i]) []
+
+-- 8
+myMapWithFolds :: (a -> b) -> [a] -> [b]
+myMapWithFolds f = foldr (\i a -> f i : a) [] 

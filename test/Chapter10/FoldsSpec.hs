@@ -16,4 +16,5 @@ spec = describe "Folds exercises" $ do
             myElemWithFolds 1 [1..5] `shouldBe` True
             myElemWithFolds 'a' "Hello" `shouldBe` False
             myReverseWithFolds [1..3] `shouldBe` [3, 2, 1]
-            myReverseWithFolds "hey" `shouldBe` "yeh" 
+            myReverseWithFolds "hey" `shouldBe` "yeh"
+            myMapWithFolds even [1..3] `shouldBe` [False, True, False]
