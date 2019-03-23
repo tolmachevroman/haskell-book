@@ -15,3 +15,5 @@ spec = describe "Folds exercises" $ do
             myAnyWithFolds even [1..5] `shouldBe` True
             myElemWithFolds 1 [1..5] `shouldBe` True
             myElemWithFolds 'a' "Hello" `shouldBe` False
+            myReverseWithFolds [1..3] `shouldBe` [3, 2, 1]
+            myReverseWithFolds "hey" `shouldBe` "yeh" 
