@@ -9,10 +9,12 @@ module SpecHelper
   , module Chapter10.Folds
   , module Chapter11.Vehicles
   , module Chapter11.Person
+  , module Chapter11.Programmer
   ) where
 
 import Chapter10.Folds
 import Chapter11.Person
+import Chapter11.Programmer
 import Chapter11.Vehicles
 import Chapter6.EqInstances
 import Chapter7.PatternMatching
