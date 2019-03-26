@@ -10,9 +10,11 @@ module SpecHelper
   , module Chapter11.Vehicles
   , module Chapter11.Person
   , module Chapter11.Programmer
+  , module Chapter11.AsSyntax
   ) where
 
 import Chapter10.Folds
+import Chapter11.AsSyntax
 import Chapter11.Person
 import Chapter11.Programmer
 import Chapter11.Vehicles

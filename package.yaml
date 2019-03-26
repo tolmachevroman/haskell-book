@@ -44,7 +44,7 @@ tests:
     other-modules:       SpecHelper, Chapter6.EqInstancesSpec, Chapter7.PatternMatchingSpec,
                          Chapter8.RecursionSpec, Chapter9.ListsSpec, Chapter9.CiphersSpec,
                          Chapter9.DatabaseSpec, Chapter10.FoldsSpec, Chapter11.VehiclesSpec, 
-                         Chapter11.PersonSpec, Chapter11.ProgrammerSpec 
+                         Chapter11.PersonSpec, Chapter11.ProgrammerSpec, Chapter11.AsSyntaxSpec 
     ghc-options:
     - -threaded
     - -rtsopts
