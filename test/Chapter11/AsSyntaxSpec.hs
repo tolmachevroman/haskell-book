@@ -11,3 +11,6 @@ spec =
       isSubseqOf "blah" "wboloath" `shouldBe` True
       isSubseqOf "blah" "wootbla" `shouldBe` False
       isSubseqOf "blah" "halbwoot" `shouldBe` False
+    it "Capitalize words function" $ do
+      capitalizeWords "hello world" `shouldBe`
+        [("hello", "Hello"), ("world", "World")]
