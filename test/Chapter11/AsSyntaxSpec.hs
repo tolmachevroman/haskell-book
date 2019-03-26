@@ -14,3 +14,4 @@ spec =
     it "Capitalize words function" $ do
       capitalizeWords "hello world" `shouldBe`
         [("hello", "Hello"), ("world", "World")]
+      capitalizeWord "hello" `shouldBe` "Hello"

@@ -1,6 +1,7 @@
 module Chapter11.AsSyntax
   ( isSubseqOf
   , capitalizeWords
+  , capitalizeWord
   ) where
 
 import Data.Char
@@ -19,4 +20,9 @@ isSubseqOf ys xs = [] == foldr f' ys (reverse xs)
 
 --
 capitalizeWords :: String -> [(String, String)]
-capitalizeWords = map (\w@(c:cs) -> (w, toUpper c : cs)) . words
+capitalizeWords = map (\w -> (w, capitalizeWord w)) . words
+
+--
+capitalizeWord :: String -> String
+capitalizeWord [] = []
+capitalizeWord (c:cs) = toUpper c : cs
