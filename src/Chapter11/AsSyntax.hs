@@ -2,9 +2,12 @@ module Chapter11.AsSyntax
   ( isSubseqOf
   , capitalizeWords
   , capitalizeWord
+  , capitalizeParagraph
   ) where
 
 import Data.Char
+import Data.List
+import Data.List.Split (splitOn)
 
 --
 isSubseqOf :: (Eq a) => [a] -> [a] -> Bool
@@ -25,4 +28,17 @@ capitalizeWords = map (\w -> (w, capitalizeWord w)) . words
 --
 capitalizeWord :: String -> String
 capitalizeWord [] = []
-capitalizeWord (c:cs) = toUpper c : cs
+capitalizeWord (c:cs) =
+  if (c == ' ')
+    then c : capitalizeWord cs
+    else toUpper c : cs
+
+--
+capitalizeParagraph :: String -> String
+capitalizeParagraph = concatMap addPeriod . map capitalizeWord . splitOn "."
+  where
+    addPeriod [] = []
+    addPeriod w =
+      if (last w /= '.')
+        then w ++ "."
+        else w
