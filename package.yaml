@@ -53,3 +53,4 @@ tests:
     dependencies:
     - haskell-book
     - hspec
+    - QuickCheck  
