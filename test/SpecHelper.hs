@@ -11,6 +11,7 @@ module SpecHelper
   , module Chapter11.Person
   , module Chapter11.Programmer
   , module Chapter11.AsSyntax
+  , module Chapter15.Monoids
   ) where
 
 import Chapter10.Folds
@@ -18,6 +19,7 @@ import Chapter11.AsSyntax
 import Chapter11.Person
 import Chapter11.Programmer
 import Chapter11.Vehicles
+import Chapter15.Monoids
 import Chapter6.EqInstances
 import Chapter7.PatternMatching
 import Chapter8.Recursion
