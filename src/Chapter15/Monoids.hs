@@ -60,3 +60,19 @@ instance (Arbitrary a, Arbitrary b, Arbitrary c) =>
 
 instance (Eq a, Eq b, Eq c) => EqProp (Three a b c) where
   (=-=) = eq
+
+--
+data Possibly a
+  = LolNope
+  | Yeppers a
+  deriving (Eq, Show)
+
+instance Functor Possibly where
+  fmap f LolNope = LolNope
+  fmap f (Yeppers a) = Yeppers (f a)
+
+instance Arbitrary a => Arbitrary (Possibly a) where
+  arbitrary = oneof [return $ LolNope, Yeppers <$> arbitrary]
+
+instance Eq a => EqProp (Possibly a) where
+  (=-=) = eq

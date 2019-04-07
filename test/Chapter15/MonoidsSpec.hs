@@ -20,6 +20,6 @@ spec =
       quickBatch (monoid $ First' (Only 0 :: Optional Int))
     it "Functor instance of Three" $
       quickBatch $ functor (undefined :: Three Int Int (Int, Int, Int))
-     --do
-      --quickBatch $
-        --functor (Three ("1", "2", "3") ("1", "2", "3") ("1", "2", "3"))
+    it "Functor instance of Possibly" $ do
+      quickBatch $ functor (undefined :: Possibly (Int, Int, Int))
+      quickBatch $ functor (undefined :: Possibly (String, String, String))
