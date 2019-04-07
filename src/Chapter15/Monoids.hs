@@ -3,6 +3,7 @@ module Chapter15.Monoids where
 import Test.QuickCheck
 import Test.QuickCheck.Checkers
 
+--
 data Optional a
   = Nada
   | Only a
@@ -20,6 +21,7 @@ instance Semigroup a => Semigroup (Optional a) where
 instance Monoid a => Monoid (Optional a) where
   mempty = Nada
 
+--
 newtype First' a = First'
   { getFirst' :: Optional a
   } deriving (Eq, Show)
@@ -41,3 +43,20 @@ instance Semigroup (First' a) where
 
 instance Monoid (First' a) where
   mempty = First' $ Nada
+
+--
+data Three a b c =
+  Three a
+        b
+        c
+  deriving (Eq, Show)
+
+instance Functor (Three a b) where
+  fmap f (Three a b c) = Three a b (f c)
+
+instance (Arbitrary a, Arbitrary b, Arbitrary c) =>
+         Arbitrary (Three a b c) where
+  arbitrary = Three <$> arbitrary <*> arbitrary <*> arbitrary
+
+instance (Eq a, Eq b, Eq c) => EqProp (Three a b c) where
+  (=-=) = eq

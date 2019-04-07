@@ -18,3 +18,8 @@ spec =
       Only [1] <> Nada `shouldBe` Only [1]
     it "Monoid instance of First'" $ do
       quickBatch (monoid $ First' (Only 0 :: Optional Int))
+    it "Functor instance of Three" $
+      quickBatch $ functor (undefined :: Three Int Int (Int, Int, Int))
+     --do
+      --quickBatch $
+        --functor (Three ("1", "2", "3") ("1", "2", "3") ("1", "2", "3"))
