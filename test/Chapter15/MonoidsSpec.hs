@@ -23,3 +23,6 @@ spec =
     it "Functor instance of Possibly" $ do
       quickBatch $ functor (undefined :: Possibly (Int, Int, Int))
       quickBatch $ functor (undefined :: Possibly (String, String, String))
+    it "Functor instance of SumF" $ do
+      quickBatch $ functor (undefined :: SumF Int (Int, Int, Int))
+      quickBatch $ functor (undefined :: SumF String (String, String, String))

@@ -76,3 +76,19 @@ instance Arbitrary a => Arbitrary (Possibly a) where
 
 instance Eq a => EqProp (Possibly a) where
   (=-=) = eq
+
+--
+data SumF a b
+  = First a
+  | Second b
+  deriving (Eq, Show)
+
+instance Functor (SumF a) where
+  fmap f (First a) = First a
+  fmap f (Second b) = Second (f b)
+
+instance (Arbitrary a, Arbitrary b) => Arbitrary (SumF a b) where
+  arbitrary = oneof [First <$> arbitrary, Second <$> arbitrary]
+
+instance (Eq a, Eq b) => EqProp (SumF a b) where
+  (=-=) = eq
